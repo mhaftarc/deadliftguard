@@ -17,4 +17,15 @@ def angle(a, b, c):  # function to calculate the angle
 
 
 
-angle((0,0),(0,0),(1,0))
+
+
+
+def trunk_angle(hip, shoulder):
+
+    vec = np.asarray(shoulder, dtype=float) - np.asarray(hip, dtype=float)
+    dx, dy = abs(vec[0]), abs(vec[1])
+
+    if dx == 0 and dy == 0 :
+        return float('nan')
+
+    return float(np.degrees(np.arctan2(dx,dy)))
